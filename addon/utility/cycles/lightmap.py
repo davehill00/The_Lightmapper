@@ -81,9 +81,11 @@ def bake(plus_pass=0):
 
             saveDir = os.path.join(os.path.dirname(bpy.data.filepath), bpy.context.scene.TLM_EngineProperties.tlm_lightmap_savedir)
             bakemap_path = os.path.join(saveDir, image.name)
-            filepath_ext = ".hdr"
+            # filepath_ext = ".hdr" # @DH
+            filepath_ext = ".tga"
             image.filepath_raw = bakemap_path + filepath_ext
-            image.file_format = "HDR"
+            # image.file_format = "HDR" # @DH
+            image.file_format = "TARGA_RAW"
             if bpy.context.scene.TLM_SceneProperties.tlm_verbose:
                 print("Saving to: " + image.filepath_raw)
             image.save()

@@ -75,6 +75,8 @@ def save_image(image):
         file_ending = ".jpg"
     elif image.file_format == "PNG" :
         file_ending = ".png"
+    elif image.file_format == "TGA" : 
+        file_ending = ".tga"
     
     savepath = path + "/tex/" + \
         str(image.size[0]) + "/" + image.name + file_ending

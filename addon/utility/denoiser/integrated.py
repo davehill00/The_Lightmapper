@@ -67,10 +67,13 @@ class TLM_Integrated_Denoise:
             filename, file_extension = os.path.splitext(image)
             filename = filename[:-6]
 
+            file_extension = ".tga"
+            print("INTEGRATED DENOISER @ DH: " + filename + ":" + file_extension)
+
             bpy.data.scenes["Scene"].render.filepath = self.image_output_destination + "/" + filename + "_denoised" + file_extension
 
             denoised_image_path = self.image_output_destination
-            bpy.data.scenes["Scene"].render.image_settings.file_format = "HDR"
+            bpy.data.scenes["Scene"].render.image_settings.file_format = "TARGA_RAW" # @DH - was HDR
 
             bpy.ops.render.render(write_still=True)
 
